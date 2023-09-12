@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Rotas from './src/Rotas.js';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>APP TCC</Text>
-      <StatusBar style="auto" />
-    </View>
+  return ( 
+    <SafeAreaView style={ estilos.safeArea }>
+      <StatusBar hidden={ false } style={ "default" } />
+      <Rotas />
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
+const estilos = StyleSheet.create({
+  safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff"
   },
 });
