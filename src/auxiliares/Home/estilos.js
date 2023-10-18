@@ -15,7 +15,7 @@ const estilos = StyleSheet.create({
 
   // topo pagina
   topo: {
-    backgroundColor: "#F6F6F6",
+    backgroundColor: "#F3CCB8",
     padding: 20
   },
   vistaBoasVindas: {
@@ -31,7 +31,7 @@ const estilos = StyleSheet.create({
     fontSize: 25,
     lineHeight: 40,
     fontWeight: "bold",
-    color: "#464646",
+    color: "#272727",
     marginHorizontal: 10,
     textAlign: "center"
   },
@@ -39,14 +39,14 @@ const estilos = StyleSheet.create({
     fontSize: 20,
     lineHeight: 42,
     fontWeight: "bold",
-    color: "#464646",
+    color: "#3B3B3B",
     marginHorizontal: 10,
     textAlign: "center"
   },
   legenda: {
     fontSize: 16,
     lineHeight: 26,
-    color: "#A3A3A3",
+    color: "#5F5F5F",
     marginTop: 10
   },
 
@@ -58,7 +58,7 @@ const estilos = StyleSheet.create({
   },
   cardOpcao: {
     width: larguraElementos,
-    backgroundColor: "#F8ECE0",
+    backgroundColor: "#D25719",
     marginLeft: 10,
     marginRight: 10,
     padding: 0,

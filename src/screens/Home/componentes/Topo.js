@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, Image } from "react-native";
-import estilos from "../auxiliares/estilos";
+import estilos from "../../../auxiliares/Home/estilos";
 
 export default function Topo({ dadosTopo }) {
     return <View style={ estilos.topo }>

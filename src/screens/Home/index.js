@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, StatusBar, View, SafeAreaView } from "react-native";
-import textos from "./auxiliares/textos";
-import estilos from "./auxiliares/estilos";
+import textos from "../../auxiliares/Home/textos";
+import estilos from "../../auxiliares/Home/estilos";
 import OpcaoEscolha from "./componentes/OpcaoEscolha";
 import Topo from "./componentes/Topo";
 

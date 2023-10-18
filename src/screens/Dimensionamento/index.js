@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import {View, Text, ActivityIndicator, ScrollView, Alert, TouchableOpacity} from "react-native";
+import apiConfig from "../../config/apiConfig";
+import estilos from "../../auxiliares/Dimensionamento/estilos";
 
-class Dimensionamento extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      resposta: null,
-      error: null,
-    };
-  }
+export default function Dimensionamento({ route, navigation }) {
+  const [resposta, setResposta] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  componentDidMount() {
-    // Dados da requisição
+  useEffect(() => {
     const requestData = {
       tipoCircuito: "DISTRIBUICAO",
       utilizacaoCircuito: "TOMADA",
@@ -28,47 +23,52 @@ class Dimensionamento extends Component {
       comprimentoFio: 60
     };
 
-    // Fazer a solicitação POST
-    axios.post('http://10.0.0.138:8080/dimensionar', requestData)
-      .then(response => {
-        // Manipular a resposta da API
+    const fetchData = async () => {
+      try {
+        console.log(route.params);
+        const response = await apiConfig.post("/dimensionar", requestData);
+
         const responseData = response.data;
-        this.setState({ resposta: responseData });
-      })
-      .catch(error => {
-        // Manipular os erros da API
-        this.setState({ error: error.message });
-      });
-  }
+        setResposta(responseData);
+      } catch (error) {
+        if (error.response?.data?.mensagem) {
+          Alert.alert(error.response.data.mensagem);
+          navigation.goBack();
+        } else {
+          Alert.alert("Erro");
+          navigation.goBack();
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  render() {
-    const { resposta, error } = this.state;
+    fetchData();
+  }, []);
 
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        {resposta ? (
-          <View>
-            <Text>Resposta da Operação:</Text>
-            <Text>{JSON.stringify(resposta, null, 2)}</Text>
-          </View>
-        ) : (
-          <Text>Carregando...</Text>
-        )}
+  let conteudoPagina;
 
-        {error && (
-          <Text style={{ color: 'red' }}>Erro: {error}</Text>
-        )}
-
-        <Button
-          title="Tentar Novamente"
-          onPress={() => {
-            // Chame novamente a operação aqui
-            this.componentDidMount();
-          }}
-        />
-      </View>
+  if (loading) {
+    conteudoPagina = <ActivityIndicator size="large" color="#D25719" />;
+  } else if (resposta) {
+    conteudoPagina = (
+      <ScrollView>
+        <Text>{JSON.stringify(resposta, null, 2)}</Text>
+        <TouchableOpacity
+          style={estilos.botao}
+          onPress={() => navigation.navigate("Calculos", { dados: resposta })}
+        >
+          <Text style={estilos.textobotao}>Ver cálculos</Text>
+        </TouchableOpacity>
+      </ScrollView>
     );
+  } else {
+    conteudoPagina = <Text>Carregando...</Text>;
   }
-}
 
-export default Dimensionamento;
+  return (
+    <View style={estilos.telaInteira}>
+      {conteudoPagina}
+    </View>
+  );
+}

@@ -1,9 +1,9 @@
 // imagens
-import logo from "../../../assets/icon.png";
-import imagemCabeamento from "../../../assets/fiacao.png";
-import imagemCondutos from "../../../assets/condutos.png";
-import imagemDisjuntores from "../../../assets/disjuntores.png";
-import imagemCalculos from "../../../assets/teoria.png";
+import logo from "../../assets/icon.png";
+import imagemCabeamento from "../../assets/fiacao.png";
+import imagemCondutos from "../../assets/condutos.png";
+import imagemDisjuntores from "../../assets/disjuntores.png";
+import imagemCalculos from "../../assets/teoria.png";
 
 const textos = {
     topo: {
@@ -16,18 +16,22 @@ const textos = {
         {
             imagem: imagemCabeamento,
             descricaoBotao: "Dimensionar \nCabeamento",
+            navegacao: "FormCabeamento",
         }, 
         {
             imagem: imagemDisjuntores,
             descricaoBotao: "Dimensionar \nDisjuntores",
+            navegacao: "Home",
         }, 
         {
             imagem: imagemCondutos,
             descricaoBotao: "Dimensionar \nCondutos",
+            navegacao: "Home",
         },
         {
             imagem: imagemCalculos,
             descricaoBotao: "Base\nTeórica",
+            navegacao: "Home",
         }
     ]
 }
