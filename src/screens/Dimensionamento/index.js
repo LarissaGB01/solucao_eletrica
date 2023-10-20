@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, ActivityIndicator, ScrollView, Alert, TouchableOpacity } from "react-native";
+import { View, ActivityIndicator, ScrollView, Alert } from "react-native";
 import apiConfig from "../../config/apiConfig";
 import estilos from "../../auxiliares/Dimensionamento/estilos";
 import textos from "../../auxiliares/Dimensionamento/textos";
-import { AntDesign } from "@expo/vector-icons";
+import CondutorSugerido from "./componentes/CondutorSugerido";
+import DisjuntorSugerido from "./componentes/DisjuntorSugerido";
+import EletrodutoSugerido from "./componentes/EletrodutoSugerido";
+
+import apiMock from "../../auxiliares/apiMock";
 
 export default function Dimensionamento({ route, navigation }) {
 
@@ -12,20 +16,7 @@ export default function Dimensionamento({ route, navigation }) {
 
   // TODO: esses dados deveriam vir da página FormCabeamento
   // const { requestData } = route.params.requisicao;
-  const requisicao = {
-    tipoCircuito: "DISTRIBUICAO",
-    utilizacaoCircuito: "TOMADA",
-    fasesVoltagem: "TRIFASICO",
-    voltagem: 380,
-    metodoInstalacao: "A1",
-    tipoCabo: "ALUMINIO",
-    potenciaAtiva: 12000,
-    potenciaAparente: 0,
-    fatorDePotencia: 0.8,
-    temperaturaAmbiente: 50,
-    quantidadeCircuitosAgrupados: 2,
-    comprimentoFio: 60
-  };
+  const requisicao = apiMock.requisicao;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,41 +50,11 @@ export default function Dimensionamento({ route, navigation }) {
     conteudoPagina = <ActivityIndicator size="large" color="#D25719" />;
   } else if (resposta) {
     conteudoPagina = (
-      <ScrollView>
-        <Text>{JSON.stringify(resposta.dadosDimensionados, null, 2)}</Text>
-
-        <TouchableOpacity style={estilos.botao} onPress={() =>
-            navigation.navigate("Condutores", {
-              requisicao1: requisicao,
-              resposta1: resposta})}
-        >
-          <View style={estilos.viewBotao}>
-            <Text style={estilos.textobotao}> {textos.botoesCalculos[0]} </Text>
-            <AntDesign name="doubleright" size={24} color="white" />
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={estilos.botao} onPress={() =>
-            navigation.navigate("Disjuntores", {
-              requisicao1: requisicao,
-              resposta1: resposta})}
-        >
-          <View style={estilos.viewBotao}>
-            <Text style={estilos.textobotao}> {textos.botoesCalculos[1]} </Text>
-            <AntDesign name="doubleright" size={24} color="white" />
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={estilos.botao} onPress={() =>
-            navigation.navigate("Eletrodutos", {
-              requisicao1: requisicao,
-              resposta1: resposta})}
-        >
-          <View style={estilos.viewBotao}>
-            <Text style={estilos.textobotao}> {textos.botoesCalculos[2]} </Text>
-            <AntDesign name="doubleright" size={24} color="white" />
-          </View>
-        </TouchableOpacity>
+      <ScrollView contentContainerStyle={estilos.scrollViewContent} // Adicione esta linha
+      style={estilos.scrollView}>
+        <CondutorSugerido resposta={resposta} requisicao={requisicao}/>
+        <DisjuntorSugerido resposta={resposta} requisicao={requisicao}/>
+        <EletrodutoSugerido resposta={resposta} requisicao={requisicao}/>
       </ScrollView>
     );
 

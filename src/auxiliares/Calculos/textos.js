@@ -2,9 +2,16 @@ import imagemFatorTemperatura from "../../assets/tabelaTemperatura.png";
 import imagemSecaoCondutorPVC from "../../assets/tabelaCondutores1.png";
 import imagemSecaoCondutorEPR from "../../assets/tabelaCondutores2.png";
 import imagemCabeamento from "../../assets/fiacao.png";
+import imagemCondutos from "../../assets/condutos.png";
+import imagemDisjuntores from "../../assets/disjuntores.png";
+import imagemDisjuntorSiemens from "../../assets/tabelaDisjuntor.png";
+import imagemEletrodutoCanaflex from "../../assets/tabelaEletroduto.jpg";
 
 const textos = {
     tituloDados: 'Dados Informados',
+    tituloDadosCalculados: 'Dados Calculados',
+    tituloCondutorRecomendado: 'Condutor Recomendado',
+
     variaveis: {
         comprimentoCabo: 'l_{\\text{cabo}}',
         fatorPotencia: 'FP',
@@ -20,9 +27,16 @@ const textos = {
         resisitividadeCabo: '\\rho',
         variacaoTensao: '\\Delta V_{\\text{c}}',
         secaoCondutor: 'S_{\\text{c}}',
+        secaoNominal: 'S_{\\text{nominal}}',
+        correnteMaxima: 'I_{\\text{maxima}}',
+        correnteNominal: 'I_{\\text{nominal}}',
+        diametroCondutor: 'd_{\\text{condutor}}',
+        diametroEletroduto: 'd_{\\text{eletroduto}}',
     },
+
     unidadesMedida: {
         distancia: 'm',
+        diametro: 'mm',
         potenciaAparente: 'VA',
         potenciaAtiva: 'W',
         temperatura: '°C',
@@ -32,6 +46,7 @@ const textos = {
         percentual: '%',
         secao: 'mm²',
     },
+
     etapasCalculos: [
         'Potência Aparente = ',
         'Corrente Circuito = ',
@@ -43,7 +58,13 @@ const textos = {
         'Seção mínima condutor = ',
         'Seção nominal ',
         'Capacidade de condução ',
+        'Nome ',
+        'Corrente nominal ',
+        'Diametro Condutor = ',
+        'Diâmetro Mínimo Eletroduto = ',
+        'Diâmetro Nominal ',
     ],
+    
     tabelas: {
         fatorTemperatura: {
             dados: [
@@ -66,6 +87,24 @@ const textos = {
             imagemEPR: imagemSecaoCondutorEPR,
             fonte: 'Fonte: NBR5410'
         },
+        disjuntorSiemens: {
+            dados: [
+                'Curva C ',
+                'Monopolar (1P) ',
+                'Bipolar (2P) ',
+                'Tripolar (3P) ',
+                'Corrente Nominal',
+            ],
+            imagem: imagemDisjuntorSiemens,
+            fonte: 'Marca: Siemens'
+        },
+        eletrodutoCanaflex: {
+            dados: [
+                'Seção Nominal >= ',
+            ],
+            imagem: imagemEletrodutoCanaflex,
+            fonte: 'Marca: Canaflex'
+        },
     },
     valoresFixos: {
         resistividade: 'Para um cabo de ',
@@ -76,8 +115,8 @@ const textos = {
     },
     respostaFinal: {
         imagem: imagemCabeamento,
-        descricaoBotao: "Dimensionar \nCabeamento",
-        navegacao: "FormCabeamento",
+        imagemDisjuntor: imagemDisjuntores,
+        imagemEletroduto: imagemCondutos,
     }, 
 }
 

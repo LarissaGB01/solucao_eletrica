@@ -15,18 +15,22 @@ export default function CondutorRecomendado({ isAcordeonOpen, toggleAcordeon, re
     <View style={estilos.espacoCalculos}>
 
       <TouchableOpacity onPress={toggleAcordeon}>
-        <Card containerStyle={ [estilos.cardOpcao] }>
-            <View style={{ flexDirection: "row", backgroundColor: "#fff", borderRadius: 10 }}>
-                <Image style={ estilos.imagemOpcoes } source={ textos.respostaFinal.imagem } />
-                <View style={{ flex: 1, padding: 10, alignItems: 'center' }}>
+        <Card containerStyle={estilos.cardResposta}>
+            <View style={estilos.viewCardResposta}>
 
-                  <Text style={estilos.textoOpcoes}>
+                <Image style={ estilos.imagemResposta } 
+                  source={ textos.respostaFinal.imagem } 
+                />
+
+                <View style={estilos.viewTextoResposta}>
+
+                  <Text style={estilos.textoResposta}>
                     {textos.etapasCalculos[8]}
                     {dadosResposta.secaoNominalCondutor.toFixed(2)}
                     {textos.unidadesMedida.secao}
                   </Text>
 
-                  <Text style={estilos.textoOpcoes}>
+                  <Text style={estilos.textoResposta}>
                     {textos.etapasCalculos[9]}
                     {dadosResposta.correnteMaximaCondutor.toFixed(2)}
                     {textos.unidadesMedida.corrente}
@@ -40,7 +44,7 @@ export default function CondutorRecomendado({ isAcordeonOpen, toggleAcordeon, re
                 </View>
             </View>
         </Card>
-          </TouchableOpacity>
+      </TouchableOpacity>
 
       <Collapsible collapsed={!isAcordeonOpen}>
         <View style={estilos.internoAcordeao}>
