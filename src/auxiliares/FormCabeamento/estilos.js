@@ -1,7 +1,4 @@
-import { Dimensions, StatusBar, StyleSheet } from "react-native";
-
-const width = Dimensions.get("screen").width;
-const larguraElementos = (width - 40) / 2;
+import { StyleSheet } from "react-native";
 
 const estilos = StyleSheet.create({
   telaInteira: {
@@ -53,12 +50,6 @@ const estilos = StyleSheet.create({
   },
   espacoPreenchimento: {
     alignSelf:'center'
-  },
-  linhaPreenchimento: { 
-    borderBottomWidth: 1, 
-    borderBottomColor: 'black', 
-    width: '80%', 
-    alignSelf: 'center' 
   },
 });
 

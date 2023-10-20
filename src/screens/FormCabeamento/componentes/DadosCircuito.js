@@ -34,7 +34,6 @@ export default function DadosCircuito({ dadosFormulario, atualizarValor }) {
             min={0}
             step={5}
             color="#FF8F5C"
-            colorAsBackground='false'
             value={dadosFormulario.temperaturaAmbiente}
             onChange={(itemValue, itemIndex) => atualizarValor("temperaturaAmbiente", itemValue)}
         />

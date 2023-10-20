@@ -18,6 +18,10 @@
 npm start
 ```
 
+```
+$env:Path += ";C:\Program Files (x86)\Git\cmd"
+```
+
 # Autores
 
 :woman_technologist:

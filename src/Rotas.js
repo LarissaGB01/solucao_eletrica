@@ -6,7 +6,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './screens/Home';
 import Dimensionamento from './screens/Dimensionamento';
 import FormCabeamento from './screens/FormCabeamento';
-import Calculos from './screens/Calculos';
+import Condutores from './screens/Calculos/Condutores';
+import Disjuntores from './screens/Calculos/Disjuntores';
+import Eletrodutos from './screens/Calculos/Eletrodutos';
 
 const Tab = createNativeStackNavigator();
 
@@ -17,7 +19,9 @@ export default function Rotas() {
                 <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
                 <Tab.Screen name="FormCabeamento" component={FormCabeamento} options={{ title: "Form" }}/>
                 <Tab.Screen name="DadosDimencionamento" component={Dimensionamento} options={{ title: "Resposta" }}/>
-                <Tab.Screen name="Calculos" component={Calculos} options={{ title: "Passo a Passo" }}/>
+                <Tab.Screen name="Condutores" component={Condutores} options={{ title: "Passo a Passo" }}/>
+                <Tab.Screen name="Disjuntores" component={Disjuntores} options={{ title: "Passo a Passo" }}/>
+                <Tab.Screen name="Eletrodutos" component={Eletrodutos} options={{ title: "Passo a Passo" }}/>
             </Tab.Navigator>
         </NavigationContainer>
     );

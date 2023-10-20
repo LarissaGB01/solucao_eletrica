@@ -24,7 +24,6 @@ export default function DadosInstalacao({ dadosFormulario, atualizarValor }) {
             min={0}
             step={1}
             color="#FF8F5C"
-            colorAsBackground='false'
             value={dadosFormulario.circuitosAgrupados}
             onChange={(itemValue, itemIndex) => atualizarValor("circuitosAgrupados", itemValue)}
         />

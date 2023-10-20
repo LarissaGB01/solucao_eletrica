@@ -1,7 +1,4 @@
-import { Dimensions, StatusBar, StyleSheet } from "react-native";
-
-const width = Dimensions.get("screen").width;
-const larguraElementos = (width - 40) / 2;
+import { StyleSheet } from "react-native";
 
 const estilos = StyleSheet.create({
   telaInteira: { 
@@ -13,11 +10,18 @@ const estilos = StyleSheet.create({
     backgroundColor: '#D25719',
     padding: 10,
     borderRadius: 5,
-    marginHorizontal:15
+    marginHorizontal:15,
+    marginVertical:5
+  },
+  viewBotao: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
   },
   textobotao: {
-    color: 'white',
-    textAlign: 'center',
+    color: "white",
+    textAlign: "center",
+    flex: 1
   },
 });
 

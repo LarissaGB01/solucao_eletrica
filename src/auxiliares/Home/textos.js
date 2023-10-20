@@ -18,16 +18,16 @@ const textos = {
             descricaoBotao: "Dimensionar \nCabeamento",
             navegacao: "FormCabeamento",
         }, 
-        {
-            imagem: imagemDisjuntores,
-            descricaoBotao: "Dimensionar \nDisjuntores",
-            navegacao: "Home",
-        }, 
-        {
-            imagem: imagemCondutos,
-            descricaoBotao: "Dimensionar \nCondutos",
-            navegacao: "Home",
-        },
+        // {
+        //     imagem: imagemDisjuntores,
+        //     descricaoBotao: "Dimensionar \nDisjuntores",
+        //     navegacao: "Home",
+        // }, 
+        // {
+        //     imagem: imagemCondutos,
+        //     descricaoBotao: "Dimensionar \nCondutos",
+        //     navegacao: "Home",
+        // },
         {
             imagem: imagemCalculos,
             descricaoBotao: "Base\nTeórica",

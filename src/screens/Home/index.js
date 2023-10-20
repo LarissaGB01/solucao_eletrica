@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, StatusBar, View, SafeAreaView } from "react-native";
+import { FlatList, View } from "react-native";
 import textos from "../../auxiliares/Home/textos";
 import estilos from "../../auxiliares/Home/estilos";
 import OpcaoEscolha from "./componentes/OpcaoEscolha";

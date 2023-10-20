@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 import textos from "../../auxiliares/FormCabeamento/textos";
 import Stepper from 'react-native-stepper-ui';
 import DadosCircuito from "./componentes/DadosCircuito";
@@ -7,9 +7,9 @@ import DadosMateriais from "./componentes/DadosMateriais";
 import DadosEletricos from "./componentes/DadosEletricos";
 import DadosInstalacao from "./componentes/DadosInstalacao";
 import estilos from "../../auxiliares/FormCabeamento/estilos";
-import { ScrollView } from "react-native";
 
 export default function FormCabeamento({ navigation }) {
+
   const [dadosFormulario, setDadosFormulario] = useState({
     tipoCircuito: textos.finalidade.respostas[0].campo,
     utilizacaoCircuito: textos.utilizacao.respostas[0].campo,
@@ -47,7 +47,7 @@ export default function FormCabeamento({ navigation }) {
         active={active}
         content={content}
         onBack={() => setActive((p) => p - 1)}
-        onFinish={() => navigation.navigate('DadosDimencionamento', dadosFormulario)}
+        onFinish={() => navigation.navigate('DadosDimencionamento', { requisicao: dadosFormulario })}
         onNext={() => setActive((p) => p + 1)}
         stepStyle={estilos.etapas}
         buttonStyle={estilos.botao}

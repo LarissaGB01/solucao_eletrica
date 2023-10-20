@@ -24,7 +24,6 @@ export default function DadosMateriais({ dadosFormulario, atualizarValor }) {
             min={0}
             step={10}
             color="#FF8F5C"
-            colorAsBackground='false'
             value={dadosFormulario.comprimentoFio}
             onChange={(itemValue, itemIndex) => atualizarValor("comprimentoFio", itemValue)}
         />
