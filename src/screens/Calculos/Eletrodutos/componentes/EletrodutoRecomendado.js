@@ -49,13 +49,13 @@ export default function EletrodutoRecomendado({ isAcordeonOpen, toggleAcordeon, 
         <View style={estilos.internoAcordeao}>
 
           <Text style={estilos.dados}>
-            {textos.tabelas.eletrodutoCanaflex.dados[0]}
+            {textos.tabelas.eletrodutoKanaflex.dados[0]}
             {dadosCalculo.diametroMinimoCalculado}
           </Text>
 
-          <Image style={ estilos.imagemTabela } source={ textos.tabelas.eletrodutoCanaflex.imagem } />
+          <Image style={ estilos.imagemTabela } source={ textos.tabelas.eletrodutoKanaflex.imagem } />
 
-          <Text>{textos.tabelas.eletrodutoCanaflex.fonte}</Text>
+          <Text>{textos.tabelas.eletrodutoKanaflex.fonte}</Text>
         </View>
       </Collapsible>
     </View>

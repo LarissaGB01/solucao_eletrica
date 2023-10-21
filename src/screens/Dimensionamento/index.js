@@ -39,8 +39,7 @@ export default function Dimensionamento({ route, navigation }) {
       } finally {
         setLoading(false);
       }
-    };
-
+    }
     fetchData();
   }, []);
 

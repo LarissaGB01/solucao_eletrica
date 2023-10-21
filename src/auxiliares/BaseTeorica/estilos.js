@@ -98,11 +98,21 @@ const estilos = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     marginHorizontal:15,
-    marginVertical:5
+    marginVertical:10
   },
   textobotao: {
     color: "black",
     textAlign: "center",
+  },
+  nomeFonte: { 
+    alignSelf: 'center', 
+    fontWeight: 'bold',
+    marginRight: 5
+  },
+  linkExterno: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

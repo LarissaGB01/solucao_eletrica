@@ -31,7 +31,7 @@ const textos = {
         {
             imagem: imagemCalculos,
             descricaoBotao: "Base\nTeórica",
-            navegacao: "Home",
+            navegacao: "BaseTeorica",
         }
     ]
 }

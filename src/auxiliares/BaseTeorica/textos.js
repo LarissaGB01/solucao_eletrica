@@ -1,17 +1,10 @@
 import imagemFatorTemperatura from "../../assets/tabelaTemperatura.png";
 import imagemSecaoCondutorPVC from "../../assets/tabelaCondutores1.png";
 import imagemSecaoCondutorEPR from "../../assets/tabelaCondutores2.png";
-import imagemCabeamento from "../../assets/fiacao.png";
-import imagemCondutos from "../../assets/condutos.png";
-import imagemDisjuntores from "../../assets/disjuntores.png";
 import imagemDisjuntorSiemens from "../../assets/tabelaDisjuntor.png";
 import imagemEletrodutoKanaflex from "../../assets/tabelaEletroduto.jpg";
 
 const textos = {
-    tituloDados: 'Dados Informados',
-    tituloDadosCalculados: 'Dados Calculados',
-    tituloCondutorRecomendado: 'Condutor Recomendado',
-
     variaveis: {
         comprimentoCabo: 'l_{\\text{cabo}}',
         fatorPotencia: 'FP',
@@ -28,7 +21,7 @@ const textos = {
         variacaoTensao: '\\Delta V_{\\text{c}}',
         secaoCondutor: 'S_{\\text{c}}',
         secaoNominal: 'S_{\\text{nominal}}',
-        correnteMaxima: 'I_{\\text{maxima}}',
+        correnteMaxima: 'I_{\\text{maximaCabo}}',
         correnteNominal: 'I_{\\text{nominal}}',
         diametroCondutor: 'd_{\\text{condutor}}',
         diametroEletroduto: 'd_{\\text{eletroduto}}',
@@ -48,21 +41,20 @@ const textos = {
     },
 
     etapasCalculos: [
-        'Potência Aparente = ',
-        'Corrente Circuito = ',
-        'Fator Agrupamento = ',
-        'Fator Temperatura = ',
-        'Corrente Projeto = ',
-        'Resistividade condutor = ',
-        'Queda de tensão = ',
-        'Seção mínima condutor = ',
-        'Seção nominal ',
-        'Capacidade de condução ',
-        'Nome ',
-        'Corrente nominal ',
-        'Diametro Condutor = ',
-        'Diâmetro Mínimo Eletroduto = ',
-        'Diâmetro Nominal ',
+        'Potência Aparente',
+        'Corrente Circuito',
+        'Fator Agrupamento',
+        'Fator Temperatura',
+        'Corrente Projeto',
+        'Resistividade Condutor',
+        'Queda de Tensão',
+        'Seção Mínima Condutor',
+        'Recomendação Condutor',
+        'Corrente Nominal Disjuntor',
+        'Recomendação Disjuntor',
+        'Diametro Condutor',
+        'Diâmetro Mínimo Eletroduto',
+        'Recomendação Eletroduto',
     ],
     
     tabelas: {
@@ -106,17 +98,24 @@ const textos = {
             fonte: 'Marca: Kanaflex'
         },
     },
-    valoresFixos: {
-        resistividade: 'Para um cabo de ',
-        variacaoTensao: 'Para um circuito de ',
-        secaoMinima: 'Para um circuito de ',
-        secaoMinimaComplemento: ' o mínimo aceito para a seção nominal do condutor é ',
-        secaoMinimaConclusao: 'Logo, ',
-    },
-    respostaFinal: {
-        imagem: imagemCabeamento,
-        imagemDisjuntor: imagemDisjuntores,
-        imagemEletroduto: imagemCondutos,
+
+    valoresVariaveis: {
+        tensao: [
+            'Em caso de circuitos TRIFÁSICOS',
+            'Em caso de circuitos NÃO TRIFÁSICOS'
+        ],
+        resistividade: [
+            'Para um cabo de ALUMÍNIO',
+            'Para um cabo de COBRE',
+        ],
+        variacaoTensao: [
+            'Para um circuito de DISTRIBUIÇÃO',
+            'Para um circuito TERMINAL'
+        ],
+        minimoSecao: {
+            inicio: 'Para um circuito de',
+            complemento: ' o mínimo aceito para a seção nominal do condutor é',
+        }
     }, 
 }
 
