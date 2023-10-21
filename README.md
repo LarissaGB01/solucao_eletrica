@@ -1,5 +1,5 @@
 <h1 align="center"> Solução Elétrica </h1>
-<h4 align="center">Projeto destinado a ser o frontend para uma solução de calculo de dimensionamento de cabos, disjuntores e condutos</h4>
+<h4 align="center">Projeto destinado a ser o frontend para uma solução de cálculo de dimensionamento de cabos, disjuntores e condutos</h4>
 <p>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge" alt="Badge em Desenvolvimento">
 </p>
@@ -15,6 +15,8 @@
 - [Documentação Teórica](#documentação-teórica)
 - [Rodando o projeto](#rodando-o-projeto)
 - [Fonte das Imagens](#fonte-das-imagens)
+- [Configuração local](#configuração-local)
+  - [API](#api)
 
 ## Contextualização do projeto
 
@@ -37,10 +39,23 @@ A lógica útilizada para a realização dos cálculos presentes nessa aplicaç�
 
 ## Rodando o projeto
 
-O projeto foi construido utilizando expo e react native, logo para rodar o projeto utilize o comando:
+O projeto foi construido utilizando expo e react native, logo para rodar o projeto utilize os seguintes comandos:
+
+```
+npm install
+```
+
 ```
 npm start
 ```
 
 ## Fonte das Imagens
 - As imagens desse projeto foram geradas via [Dream.ia](https://dream.ai/create)
+
+## Configuração local
+
+### API
+Para que o projeto realize as requisições para a API definida é necessário a realização da configuração dos dados de conexão. Atenção aos seguintes pontos:
+
+* Clonagem projeto backend para disponibilização dos endpoints localmente: clone o projeto e siga as instruções disponíveis [nesse repositório](https://github.com/LarissaGB01/solucao_eletrica_backend/blob/main/README.md#configura%C3%A7%C3%A3o-local)
+* Configurações de conexão: devem ser atualizadas [nesse arquivo](src/config/apiConfig.js)
