@@ -4,6 +4,7 @@ const width = Dimensions.get("screen").width;
 const larguraElementos = (width - 40) / 2;
 
 const estilos = StyleSheet.create({
+  // pagina inteira
   scrollView: {
     flex: 1,
   },
@@ -15,23 +16,18 @@ const estilos = StyleSheet.create({
     justifyContent: "center", 
     alignItems: "center" 
   },
-  botao: {
-    backgroundColor: '#D25719',
-    padding: 10,
-    borderRadius: 5,
-    marginHorizontal:15,
-    marginVertical:5
-  },
-  viewBotao: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
-  },
-  textobotao: {
-    color: "white",
+
+  // titulos
+  textoTitulo: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#000000",
     textAlign: "center",
-    flex: 1
+    marginTop: 20,
+    marginBottom: 1
   },
+
+  // respostas
   cardResposta: {
     backgroundColor: "#D25719",
     padding: 0,
@@ -55,13 +51,6 @@ const estilos = StyleSheet.create({
     padding: 10, 
     alignItems: 'center' 
   },
-  textoResposta: {
-    fontSize: 15,
-    fontWeight: "bold",
-    color: "#000000",
-    textAlign: "center",
-    marginVertical: 10
-  },
   textoRespostaDescricao: {
     fontSize: 15,
     fontWeight: "bold",
@@ -76,13 +65,31 @@ const estilos = StyleSheet.create({
     textAlign: "center",
     marginBottom: 10
   },
-  textoTitulo: {
-    fontSize: 20,
+  textoResposta: {
+    fontSize: 15,
     fontWeight: "bold",
     color: "#000000",
     textAlign: "center",
-    marginTop: 20,
-    marginBottom: 1
+    marginVertical: 10
+  },
+
+  // botao
+  botao: {
+    backgroundColor: '#D25719',
+    padding: 10,
+    borderRadius: 5,
+    marginHorizontal:15,
+    marginVertical:5
+  },
+  viewBotao: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  textobotao: {
+    color: "white",
+    textAlign: "center",
+    flex: 1
   },
 });
 

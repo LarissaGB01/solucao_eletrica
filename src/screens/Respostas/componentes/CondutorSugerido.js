@@ -1,14 +1,17 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import estilos from "../../../auxiliares/Dimensionamento/estilos";
-import textos from "../../../auxiliares/Dimensionamento/textos";
 import { AntDesign } from "@expo/vector-icons";
 import { Card } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 
+import estilos from "../../../auxiliares/Respostas/estilos";
+import textos from "../../../auxiliares/Respostas/textos";
+
 export default function CondutorSugerido({ requisicao, resposta }) {
 
   const navigation = useNavigation();
+
+  const dimensionados = resposta.dadosDimensionados.cabeamento;
 
   return (
     <View>
@@ -28,7 +31,7 @@ export default function CondutorSugerido({ requisicao, resposta }) {
             </Text>
 
             <Text style={estilos.textoRespostaFinal}>
-              {resposta.dadosDimensionados.cabeamento.secaoNominalCondutor.toFixed(2)}
+              {dimensionados.secaoNominalCondutor.toFixed(2)}
               {textos.unidadesMedida.secao}
             </Text>
 
@@ -37,7 +40,7 @@ export default function CondutorSugerido({ requisicao, resposta }) {
             </Text>
 
             <Text style={estilos.textoRespostaFinal}>
-              {resposta.dadosDimensionados.cabeamento.correnteMaximaCondutor.toFixed(2)}
+              {dimensionados.correnteMaximaCondutor.toFixed(2)}
               {textos.unidadesMedida.corrente}
             </Text>
           </View>
@@ -47,8 +50,8 @@ export default function CondutorSugerido({ requisicao, resposta }) {
       <TouchableOpacity style={estilos.botao}
         onPress={() =>
           navigation.navigate("Condutores", {
-            requisicao1: requisicao,
-            resposta1: resposta
+            requisicao: requisicao,
+            resposta: resposta
           })
         }
       >

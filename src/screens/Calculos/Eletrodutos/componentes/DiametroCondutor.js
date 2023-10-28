@@ -1,14 +1,15 @@
 import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
-import estilos from "../../../../auxiliares/Calculos/estilos";
 import MathView from "react-native-math-view";
-import textos from "../../../../auxiliares/Calculos/textos";
 import Collapsible from "react-native-collapsible";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function DiametroCondutor({ resposta, isAcordeonOpen, toggleAcordeon }) {
+import estilos from "../../../../auxiliares/Calculos/estilos";
+import textos from "../../../../auxiliares/Calculos/textos";
 
-  const dados = resposta.dadosUtilizadosParaCalculo.calculoEletroduto;
+export default function DiametroCondutor({ resposta, origemCabeamento, isAcordeonOpen, toggleAcordeon }) {
+
+  const dados = origemCabeamento ? resposta.dadosUtilizadosParaCalculo.calculoEletroduto : resposta.dadosUtilizadosParaCalculo;
 
   return (
     <View style={estilos.espacoCalculos}>

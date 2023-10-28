@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { ScrollView } from "react-native";
 
+import estilos from "../../auxiliares/Calculos/estilos";
+
+// componentes
 import CalculoPotenciaAparente from "./componentes/PotenciaAparente";
 import CalculoCorrenteCircuito from "./componentes/CorrenteCircuito";
 import CalculoCorrenteProjeto from "./componentes/CorrenteProjeto";
@@ -15,8 +18,6 @@ import DisjuntorRecomendado from "./componentes/DisjuntorRecomendado";
 import DiametroCondutor from "./componentes/DiametroCondutor";
 import DiametroEletroduto from "./componentes/DiametroEletroduto";
 import EletrodutoRecomendado from "./componentes/EletrodutoRecomendado";
-
-import estilos from "../../auxiliares/Calculos/estilos";
 
 export default function BaseTeorica() {
 

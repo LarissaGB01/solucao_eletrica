@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
+
+import estilos from "../../../auxiliares/Calculos/estilos";
+
+// componentes
 import DadosInformados from "./componentes/DadosInformados";
 import DadosCalculados from "./componentes/DadosCalculados";
 import CondutorRecomendado from "./componentes/CondutorRecomendado";
-import estilos from "../../../auxiliares/Calculos/estilos";
 import DiametroCondutor from "./componentes/DiametroCondutor";
 import DiametroEletroduto from "./componentes/DiametroEletroduto";
 import EletrodutoRecomendado from "./componentes/EletrodutoRecomendado";
-import apiMock from "../../../auxiliares/apiMock";
 
-export default function Eletrodutos({ requisicao1, resposta1 }) {
+export default function Eletrodutos({ route, navigation }) {
   
-  // TODO: esses dados deveriam vir da página Dimensionamento
-  // const { requisicao } = route.params.requisicao;
-  // const { resposta } = route.params.resposta;
-  const requisicao = apiMock.requisicao;
-  const resposta = apiMock.resposta;
+  const origemCabeamento = Boolean(route.params.origemCabeamento);
+  const requisicao = route.params.requisicao;
+  const resposta = route.params.resposta;
   
   const [isAcordeonDadosInformadosOpen, setIsAcordeonDadosInformadosOpen] = useState(false);
   const [isAcordeonDadosCalculadosOpen, setIsAcordeonDadosCalculadosOpen] = useState(false);
@@ -26,12 +26,16 @@ export default function Eletrodutos({ requisicao1, resposta1 }) {
 
   return (
     <ScrollView style={estilos.telaInteira}>
-      <DadosInformados requestData={requisicao} isAcordeonOpen={isAcordeonDadosInformadosOpen} toggleAcordeon={() => setIsAcordeonDadosInformadosOpen(!isAcordeonDadosInformadosOpen)} />
-      <DadosCalculados responseData={resposta} isAcordeonOpen={isAcordeonDadosCalculadosOpen} toggleAcordeon={() => setIsAcordeonDadosCalculadosOpen(!isAcordeonDadosCalculadosOpen)} />
-      <CondutorRecomendado responseData={resposta} isAcordeonOpen={isAcordeonCondutorRecomendadoOpen} toggleAcordeon={() => setIsAcordeonCondutorRecomendadoOpen(!isAcordeonCondutorRecomendadoOpen)} />
-      <DiametroCondutor resposta={resposta} isAcordeonOpen={isAcordeonDiametroCondutorOpen} toggleAcordeon={() => setIsAcordeonDiametroCondutorOpen(!isAcordeonDiametroCondutorOpen)} />
-      <DiametroEletroduto resposta={resposta} isAcordeonOpen={isAcordeonDiametroEletrodutoOpen} toggleAcordeon={() => setIsAcordeonDiametroEletrodutoOpen(!isAcordeonDiametroEletrodutoOpen)} />
-      <EletrodutoRecomendado responseData={resposta} isAcordeonOpen={isAcordeonDisjuntorRecomendadoOpen} toggleAcordeon={() => setIsAcordeonDisjuntorRecomendadoOpen(!isAcordeonDisjuntorRecomendadoOpen)} />
+      <DadosInformados requestData={requisicao} origemCabeamento = {origemCabeamento} isAcordeonOpen={isAcordeonDadosInformadosOpen} toggleAcordeon={() => setIsAcordeonDadosInformadosOpen(!isAcordeonDadosInformadosOpen)} />
+      {origemCabeamento ? (
+        <View>
+          <DadosCalculados responseData={resposta} isAcordeonOpen={isAcordeonDadosCalculadosOpen} toggleAcordeon={() => setIsAcordeonDadosCalculadosOpen(!isAcordeonDadosCalculadosOpen)} />
+          <CondutorRecomendado responseData={resposta} isAcordeonOpen={isAcordeonCondutorRecomendadoOpen} toggleAcordeon={() => setIsAcordeonCondutorRecomendadoOpen(!isAcordeonCondutorRecomendadoOpen)} />
+        </View>
+      ) : null }
+      <DiametroCondutor resposta={resposta} origemCabeamento = {origemCabeamento} isAcordeonOpen={isAcordeonDiametroCondutorOpen} toggleAcordeon={() => setIsAcordeonDiametroCondutorOpen(!isAcordeonDiametroCondutorOpen)} />
+      <DiametroEletroduto resposta={resposta} origemCabeamento = {origemCabeamento} isAcordeonOpen={isAcordeonDiametroEletrodutoOpen} toggleAcordeon={() => setIsAcordeonDiametroEletrodutoOpen(!isAcordeonDiametroEletrodutoOpen)} />
+      <EletrodutoRecomendado responseData={resposta} origemCabeamento = {origemCabeamento} isAcordeonOpen={isAcordeonDisjuntorRecomendadoOpen} toggleAcordeon={() => setIsAcordeonDisjuntorRecomendadoOpen(!isAcordeonDisjuntorRecomendadoOpen)} />
     </ScrollView>
   );
 }

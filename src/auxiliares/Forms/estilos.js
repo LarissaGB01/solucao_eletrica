@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const estilos = StyleSheet.create({
+  // principal
   telaInteira: {
     marginVertical: 30, 
     marginHorizontal: 20,
@@ -20,6 +21,8 @@ const estilos = StyleSheet.create({
     backgroundColor: '#D25719',
     marginTop: 30
   },
+
+  // enunciados
   enunciado: {
     fontSize: 16,
     fontWeight: 'bold',
@@ -32,6 +35,8 @@ const estilos = StyleSheet.create({
     marginVertical: 20,
     marginHorizontal: 10,
   },
+
+  // respostas
   campoNumerico: {
     color: 16,
     fontWeight: 'bold',
@@ -39,9 +44,13 @@ const estilos = StyleSheet.create({
     textAlign: 'center'
   },
   entradaTexto: {
-    marginHorizontal:50, 
+    marginHorizontal: 30, 
     textAlign:'center', 
-    fontSize: 16
+    fontSize: 16,
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    padding: 5,
+    width: 100,
   },
   resposta: {
     fontSize: 16,

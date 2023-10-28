@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import Collapsible from "react-native-collapsible";
+import { AntDesign } from "@expo/vector-icons";
+
 import estilos from "../../../auxiliares/BaseTeorica/estilos";
 import textos from "../../../auxiliares/BaseTeorica/textos";
-import { AntDesign } from "@expo/vector-icons";
 import abrirLink from "../../../config/linksExternos";
 
 export default function CondutorRecomendado({ isAcordeonOpen, toggleAcordeon }) {

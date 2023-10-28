@@ -49,6 +49,8 @@ npm install
 npm start
 ```
 
+Para visualizar o app basta baixar no seu celular o aplicativo **Expo GO** e escanear o qrCode gerado ao rodar o projeto.
+
 ## Fonte das Imagens
 - As imagens desse projeto foram geradas via [Dream.ia](https://dream.ai/create)
 

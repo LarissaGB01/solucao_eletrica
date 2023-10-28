@@ -59,41 +59,19 @@ const textos = {
     
     tabelas: {
         fatorTemperatura: {
-            dados: [
-                'Temperatura Ambiente = ',
-                'Isolação = ',
-            ],
             imagem: imagemFatorTemperatura,
             fonte: 'Fonte: NBR5410'
         },
         secaoCondutor: {
-            dados: [
-                'Método de referência = ',
-                'Número de condutores carregados = ',
-                'Condutores = ',
-                'Isolação = ',
-                'Para uma corrente >= ',
-                'Para uma sessão nominal >= ',
-            ],
             imagemPVC: imagemSecaoCondutorPVC,
             imagemEPR: imagemSecaoCondutorEPR,
             fonte: 'Fonte: NBR5410'
         },
         disjuntorSiemens: {
-            dados: [
-                'Curva C ',
-                'Monopolar (1P) ',
-                'Bipolar (2P) ',
-                'Tripolar (3P) ',
-                'Corrente Nominal',
-            ],
             imagem: imagemDisjuntorSiemens,
             fonte: 'Marca: Siemens'
         },
         eletrodutoKanaflex: {
-            dados: [
-                'Seção Nominal >= ',
-            ],
             imagem: imagemEletrodutoKanaflex,
             fonte: 'Marca: Kanaflex'
         },

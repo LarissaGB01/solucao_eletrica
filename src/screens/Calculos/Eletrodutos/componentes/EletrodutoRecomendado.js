@@ -6,10 +6,11 @@ import textos from "../../../../auxiliares/Calculos/textos";
 import { Card } from "react-native-elements";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function EletrodutoRecomendado({ isAcordeonOpen, toggleAcordeon, responseData }) {
+export default function EletrodutoRecomendado({ isAcordeonOpen, origemCabeamento, toggleAcordeon, responseData }) {
  
-  const dadosCalculo = responseData.dadosUtilizadosParaCalculo.calculoEletroduto;
-  const dadosResposta = responseData.dadosDimensionados.eletroduto;
+  const dadosCalculo = origemCabeamento ? responseData.dadosUtilizadosParaCalculo.calculoEletroduto : responseData.dadosUtilizadosParaCalculo;
+  const dadosResposta = origemCabeamento ? responseData.dadosDimensionados.eletroduto : responseData.eletroduto;
+  const eletrodutoEncontrado = dadosResposta.diametroNominalEletrodutoSugeridoMilimetros != 0;
 
   return (
     <View style={estilos.espacoCalculos}>
@@ -20,20 +21,30 @@ export default function EletrodutoRecomendado({ isAcordeonOpen, toggleAcordeon, 
                 <Image style={ estilos.imagemResposta } 
                   source={ textos.respostaFinal.imagemEletroduto } 
                 />
-
+                
                 <View style={estilos.viewTextoResposta}>
-                  <Text style={estilos.textoResposta}>
-                    {textos.etapasCalculos[14]}
-                  </Text>
+                  {eletrodutoEncontrado ? (
+                    <View>
+                      <Text style={estilos.textoResposta}>
+                        {textos.etapasCalculos[14]}
+                      </Text>
 
-                  <Text style={estilos.textoResposta}>
-                    {dadosResposta.diametroNominalEletrodutoSugeridoPolegadas}
-                  </Text>
+                      <Text style={estilos.textoResposta}>
+                        {dadosResposta.diametroNominalEletrodutoSugeridoPolegadas}
+                      </Text>
 
-                  <Text style={estilos.textoResposta}>
-                    {dadosResposta.diametroNominalEletrodutoSugeridoMilimetros.toFixed(2)}
-                    {textos.unidadesMedida.diametro}
-                  </Text>
+                      <Text style={estilos.textoResposta}>
+                        {dadosResposta.diametroNominalEletrodutoSugeridoMilimetros.toFixed(2)}
+                        {textos.unidadesMedida.diametro}
+                      </Text>
+                    </View>
+                  ) : (
+                    <View>
+                      <Text style={estilos.textoResposta}>
+                        {textos.valoresFixos.eletrodutoNaoEncontrado}
+                      </Text>
+                    </View>
+                  )}
 
                   {isAcordeonOpen ? (
                     <AntDesign name="caretup" size={14} color="black" />

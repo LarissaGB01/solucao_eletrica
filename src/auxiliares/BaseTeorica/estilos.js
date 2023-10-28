@@ -1,89 +1,15 @@
-import { Dimensions, StyleSheet } from "react-native";
-
-const width = Dimensions.get("screen").width;
-const larguraElementos = (width - 40) / 2;
+import { StyleSheet } from "react-native";
 
 const estilos = StyleSheet.create({
+  // tela 
   telaInteira: { 
     margin: 20 
   },
-  tituloDados: { 
-    marginBottom: 20, 
-    fontWeight: "bold", 
-    alignSelf: "center" 
-  },
-  dados: { 
-    marginBottom: 15 
-  }, 
-  equacoes: { 
-    marginVertical: 15 
-  }, 
   espacoCalculos: {
     marginVertical:10
   }, 
-  textoDestaqueAcordeao: { 
-    backgroundColor: "#D25719", 
-    color: "white", 
-    padding: 10, 
-    textAlign:'center' 
-  }, 
-  internoAcordeao: { 
-    backgroundColor: "lightgray", 
-    padding: 10 
-  }, 
-  imagemTabela: { 
-    width: '100%', 
-    resizeMode: 'contain' 
-  }, 
-  cardResposta: {
-    backgroundColor: "#D25719",
-    padding: 0,
-    borderRadius: 10,
-    borderWidth: 3,
-    borderColor: "#000000"
-  },
-  viewCardResposta: { 
-    flexDirection: "row", 
-    backgroundColor: "#fff", 
-    borderRadius: 10 
-  },
-  viewTextoResposta: { 
-    flex: 1, 
-    padding: 10, 
-    alignItems: 'center' 
-  },
-  viewEquacaoPrincipal: { 
-    flex: 1, 
-    padding: 10, 
-    alignItems: 'center',
-    marginTop: 30
-  },
-  imagemResposta: {
-    width: larguraElementos - 10,
-    height: larguraElementos - 10,
-    borderRadius: 5
-  },
-  textoResposta: {
-    fontSize: 15,
-    fontWeight: "bold",
-    color: "#000000",
-    textAlign: "center",
-    marginVertical: 10
-  },
-  textoRespostaDescricao: {
-    fontSize: 15,
-    fontWeight: "bold",
-    color: "#000000",
-    textAlign: "center",
-    marginTop: 10
-  },
-  textoRespostaFinal: {
-    fontSize: 15,
-    fontWeight: "bold",
-    color: "#000000",
-    textAlign: "center",
-    marginBottom: 10
-  },
+
+  // acordeao externo
   viewBotao: {
     backgroundColor: "#D25719", 
     flexDirection: "row",
@@ -91,6 +17,24 @@ const estilos = StyleSheet.create({
     alignItems: "center",
     padding: 5
   },
+  textoDestaqueAcordeao: { 
+    backgroundColor: "#D25719", 
+    color: "white", 
+    padding: 10, 
+    textAlign:'center' 
+  }, 
+
+  // acordeao interno
+  internoAcordeao: { 
+    backgroundColor: "lightgray", 
+    padding: 10 
+  }, 
+
+  // tabelas
+  imagemTabela: { 
+    width: '100%', 
+    resizeMode: 'contain' 
+  }, 
   botao: {
     backgroundColor: '#F3CCB8',
     borderColor: 'black',
@@ -100,20 +44,28 @@ const estilos = StyleSheet.create({
     marginHorizontal:15,
     marginVertical:10
   },
-  textobotao: {
-    color: "black",
-    textAlign: "center",
+  linkExterno: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   nomeFonte: { 
     alignSelf: 'center', 
     fontWeight: 'bold',
     marginRight: 5
   },
-  linkExterno: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+
+  // equacoes
+  textoResposta: {
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#000000",
+    textAlign: "center",
+    marginVertical: 10
   },
+  equacoes: { 
+    marginVertical: 15 
+  }, 
 });
 
 export default estilos;

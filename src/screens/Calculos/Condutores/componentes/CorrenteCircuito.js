@@ -2,9 +2,10 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import Collapsible from "react-native-collapsible";
 import MathView from "react-native-math-view";
+import { AntDesign } from "@expo/vector-icons";
+
 import estilos from "../../../../auxiliares/Calculos/estilos";
 import textos from "../../../../auxiliares/Calculos/textos";
-import { AntDesign } from "@expo/vector-icons";
 
 export default function CorrenteCircuito({ isAcordeonOpen, toggleAcordeon, responseData }) {
  

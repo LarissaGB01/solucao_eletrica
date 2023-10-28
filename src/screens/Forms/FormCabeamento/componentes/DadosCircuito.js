@@ -1,10 +1,11 @@
 import React from "react";
 import { Text } from "react-native";
-import textos from "../../../auxiliares/FormCabeamento/textos";
 import { Picker } from "@react-native-picker/picker";
 import InputSpinner from "react-native-input-spinner";
-import estilos from "../../../auxiliares/FormCabeamento/estilos";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
+import textos from "../../../../auxiliares/Forms/textosCabeamento";
+import estilos from "../../../../auxiliares/Forms/estilos";
 
 export default function DadosCircuito({ dadosFormulario, atualizarValor }) {
     return <KeyboardAwareScrollView>
@@ -28,7 +29,7 @@ export default function DadosCircuito({ dadosFormulario, atualizarValor }) {
             ))}
         </Picker>
         
-        <Text style={estilos.enunciado}>{textos.instalacao.temperatura.pergunta}</Text>
+        <Text style={estilos.enunciado}>{textos.temperatura.pergunta}</Text>
         <InputSpinner
             max={80}
             min={0}

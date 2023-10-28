@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import Collapsible from "react-native-collapsible";
+import { AntDesign } from "@expo/vector-icons";
+
 import estilos from "../../../../auxiliares/Calculos/estilos";
 import textos from "../../../../auxiliares/Calculos/textos";
-import { AntDesign } from "@expo/vector-icons";
 
 export default function FatorTemperatura({ isAcordeonOpen, toggleAcordeon, responseData }) {
  

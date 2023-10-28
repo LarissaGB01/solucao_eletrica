@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import Collapsible from "react-native-collapsible";
-import estilos from "../../../../auxiliares/Calculos/estilos";
-import textos from "../../../../auxiliares/Calculos/textos";
 import { Card } from "react-native-elements";
 import { AntDesign } from "@expo/vector-icons";
+
+import estilos from "../../../../auxiliares/Calculos/estilos";
+import textos from "../../../../auxiliares/Calculos/textos";
 
 export default function CondutorRecomendado({ isAcordeonOpen, toggleAcordeon, responseData }) {
  

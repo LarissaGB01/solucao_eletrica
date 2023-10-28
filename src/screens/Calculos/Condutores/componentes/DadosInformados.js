@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import MathView from "react-native-math-view";
+
 import estilos from "../../../../auxiliares/Calculos/estilos";
 import textos from "../../../../auxiliares/Calculos/textos";
 

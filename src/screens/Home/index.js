@@ -1,12 +1,14 @@
 import React from "react";
 import { FlatList, View } from "react-native";
+
 import textos from "../../auxiliares/Home/textos";
 import estilos from "../../auxiliares/Home/estilos";
-import OpcaoEscolha from "./componentes/OpcaoEscolha";
+
+// componentes
 import Topo from "./componentes/Topo";
+import OpcaoEscolha from "./componentes/OpcaoEscolha";
 
 export default function Home({ navigation }) {
-
     return ( 
         <View style={ estilos.telaInteira }>
           <FlatList

@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Collapsible from "react-native-collapsible";
-import estilos from "../../../auxiliares/BaseTeorica//estilos";
-import textos from "../../../auxiliares/BaseTeorica/textos";
 import MathView from "react-native-math-view";
 import { AntDesign } from "@expo/vector-icons";
+
+import estilos from "../../../auxiliares/BaseTeorica//estilos";
+import textos from "../../../auxiliares/BaseTeorica/textos";
 
 export default function ResistividadeCabo({ isAcordeonOpen, toggleAcordeon }) {
 

@@ -1,16 +1,18 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import Collapsible from "react-native-collapsible";
-import estilos from "../../../../auxiliares/Calculos/estilos";
-import textos from "../../../../auxiliares/Calculos/textos";
 import { Card } from "react-native-elements";
 import { AntDesign } from "@expo/vector-icons";
 import MathView from "react-native-math-view";
 
-export default function DisjuntorRecomendado({ isAcordeonOpen, toggleAcordeon, responseData }) {
+import estilos from "../../../../auxiliares/Calculos/estilos";
+import textos from "../../../../auxiliares/Calculos/textos";
+
+export default function DisjuntorRecomendado({ isAcordeonOpen, origemCabeamento, toggleAcordeon, responseData }) {
  
-  const dadosCalculo = responseData.dadosUtilizadosParaCalculo.calculoDisjuntor;
-  const dadosResposta = responseData.dadosDimensionados.disjuntor;
+  const dadosCalculo = origemCabeamento ? responseData.dadosUtilizadosParaCalculo.calculoDisjuntor : responseData.dadosUtilizadosParaCalculo;
+  const dadosResposta = origemCabeamento ? responseData.dadosDimensionados.disjuntor : responseData.disjuntor;
+  const disjuntorEncontrado = dadosResposta.correnteNominalDisjuntorRecomendado != 0;
 
   return (
     <View style={estilos.espacoCalculos}>
@@ -22,24 +24,34 @@ export default function DisjuntorRecomendado({ isAcordeonOpen, toggleAcordeon, r
                 <Image style={ estilos.imagemResposta } 
                   source={ textos.respostaFinal.imagemDisjuntor } 
                 />
-
+                
                 <View style={estilos.viewTextoResposta}>
-                  <Text style={estilos.textoRespostaDescricao}>
-                    {textos.etapasCalculos[10]}
-                  </Text>
+                  {disjuntorEncontrado ? (
+                    <View>
+                      <Text style={estilos.textoRespostaDescricao}>
+                        {textos.etapasCalculos[10]}
+                      </Text>
 
-                  <Text style={estilos.textoRespostaFinal}>
-                    {dadosResposta.nomeDisjuntorRecomendado}
-                  </Text>
+                      <Text style={estilos.textoRespostaFinal}>
+                        {dadosResposta.nomeDisjuntorRecomendado}
+                      </Text>
 
-                  <Text style={estilos.textoRespostaDescricao}>
-                    {textos.etapasCalculos[11]}
-                  </Text>
+                      <Text style={estilos.textoRespostaDescricao}>
+                        {textos.etapasCalculos[11]}
+                      </Text>
 
-                  <Text style={estilos.textoRespostaFinal}>
-                    {dadosResposta.correnteNominalDisjuntorRecomendado.toFixed(2)}
-                    {textos.unidadesMedida.corrente}
-                  </Text>
+                      <Text style={estilos.textoRespostaFinal}>
+                        {dadosResposta.correnteNominalDisjuntorRecomendado.toFixed(2)}
+                        {textos.unidadesMedida.corrente}
+                      </Text>
+                    </View>
+                  ) : (
+                    <View>
+                      <Text style={estilos.textoResposta}>
+                        {textos.valoresFixos.disjuntorNaoEncontrado}
+                      </Text>
+                    </View>
+                  )}
 
                   {isAcordeonOpen ? (
                     <AntDesign name="caretup" size={14} color="black" />

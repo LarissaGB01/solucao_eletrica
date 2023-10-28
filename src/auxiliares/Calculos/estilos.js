@@ -4,9 +4,12 @@ const width = Dimensions.get("screen").width;
 const larguraElementos = (width - 40) / 2;
 
 const estilos = StyleSheet.create({
+  // geral
   telaInteira: { 
     margin: 20 
   },
+
+  // dados informados
   tituloDados: { 
     marginBottom: 20, 
     fontWeight: "bold", 
@@ -15,12 +18,18 @@ const estilos = StyleSheet.create({
   dados: { 
     marginBottom: 15 
   }, 
-  equacoes: { 
-    marginVertical: 15 
-  }, 
   espacoCalculos: {
     marginVertical:10
   }, 
+
+  // acordeao
+  viewBotao: {
+    backgroundColor: "#D25719", 
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 5
+  },
   textoDestaqueAcordeao: { 
     backgroundColor: "#D25719", 
     color: "white", 
@@ -31,10 +40,25 @@ const estilos = StyleSheet.create({
     backgroundColor: "lightgray", 
     padding: 10 
   }, 
+
+  // equacoes
+  equacoes: { 
+    marginVertical: 15 
+  }, 
+  viewEquacaoPrincipal: { 
+    flex: 1, 
+    padding: 10, 
+    alignItems: 'center',
+    marginTop: 30
+  },
+
+  // tabelas
   imagemTabela: { 
     width: '100%', 
     resizeMode: 'contain' 
   }, 
+
+  // resposta
   cardResposta: {
     backgroundColor: "#D25719",
     padding: 0,
@@ -47,21 +71,15 @@ const estilos = StyleSheet.create({
     backgroundColor: "#fff", 
     borderRadius: 10 
   },
-  viewTextoResposta: { 
-    flex: 1, 
-    padding: 10, 
-    alignItems: 'center' 
-  },
-  viewEquacaoPrincipal: { 
-    flex: 1, 
-    padding: 10, 
-    alignItems: 'center',
-    marginTop: 30
-  },
   imagemResposta: {
     width: larguraElementos - 10,
     height: larguraElementos - 10,
     borderRadius: 5
+  },
+  viewTextoResposta: { 
+    flex: 1, 
+    padding: 10, 
+    alignItems: 'center' 
   },
   textoResposta: {
     fontSize: 15,
@@ -83,26 +101,6 @@ const estilos = StyleSheet.create({
     color: "#000000",
     textAlign: "center",
     marginBottom: 10
-  },
-  viewBotao: {
-    backgroundColor: "#D25719", 
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 5
-  },
-  botao: {
-    backgroundColor: '#F3CCB8',
-    borderColor: 'black',
-    borderWidth: 1,
-    padding: 10,
-    borderRadius: 5,
-    marginHorizontal:15,
-    marginVertical:5
-  },
-  textobotao: {
-    color: "black",
-    textAlign: "center",
   },
 });
 

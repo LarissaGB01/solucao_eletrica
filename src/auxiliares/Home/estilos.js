@@ -4,16 +4,17 @@ const width = Dimensions.get("screen").width;
 const larguraElementos = (width - 40) / 2;
 
 const estilos = StyleSheet.create({
-  // configuracoes gerais
+  // pagina inteira
   telaInteira: {
     flex: 1
   },
-  safeArea: {
+  listaOpcoes: {
     flex: 1,
-    backgroundColor: "#fff"
+    flexDirection: "column",
+    paddingTop: StatusBar.currentHeight
   },
 
-  // topo pagina
+  // componente topo
   topo: {
     backgroundColor: "#F3CCB8",
     padding: 20
@@ -50,12 +51,7 @@ const estilos = StyleSheet.create({
     marginTop: 10
   },
 
-  // opcoes
-  listaOpcoes: {
-    flex: 1,
-    flexDirection: "column",
-    paddingTop: StatusBar.currentHeight
-  },
+  // componente opcoes
   cardOpcao: {
     width: larguraElementos,
     backgroundColor: "#D25719",

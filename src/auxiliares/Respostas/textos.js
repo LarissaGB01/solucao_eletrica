@@ -16,6 +16,7 @@ const textos = {
     respostaFinalCondutos: { 
         imagem: imagemCondutos,
         descricaoBotao: "Eletroduto Sugerido",
+        naoEncontrado: "Desculpe, mas não encontrei eletroduto para os parâmetros fornecidos.",
         dados: [
             'Diâmetro nominal ',
         ]
@@ -23,6 +24,7 @@ const textos = {
     respostaFinalDisjuntores: { 
         imagem: imagemDisjuntores,
         descricaoBotao: "Disjuntor Sugerido",
+        naoEncontrado: "Desculpe, mas não encontrei disjuntor para os parâmetros fornecidos.",
         dados: [
             'Nome ',
             'Corrente nominal ',

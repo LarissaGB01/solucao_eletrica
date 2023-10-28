@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { View, ActivityIndicator, ScrollView, Alert } from "react-native";
+
+import estilos from "../../auxiliares/Respostas/estilos";
+import textos from "../../auxiliares/Respostas/textos";
 import apiConfig from "../../config/apiConfig";
-import estilos from "../../auxiliares/Dimensionamento/estilos";
-import textos from "../../auxiliares/Dimensionamento/textos";
-import CondutorSugerido from "./componentes/CondutorSugerido";
-import DisjuntorSugerido from "./componentes/DisjuntorSugerido";
+
+// componentes
 import EletrodutoSugerido from "./componentes/EletrodutoSugerido";
 
-import apiMock from "../../auxiliares/apiMock";
-
-export default function Dimensionamento({ route, navigation }) {
+export default function RespostaEletrodutos({ route, navigation }) {
 
   const [resposta, setResposta] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // TODO: esses dados deveriam vir da página FormCabeamento
-  // const { requestData } = route.params.requisicao;
-  const requisicao = apiMock.requisicao;
+  const requisicao = { 
+    secaoNominalCabo: parseFloat(route.params.secaoNominalCabo.toString().replace(',', '.')),
+    quantidadeCondutores: parseInt(route.params.quantidadeCondutores),
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-
-        const response = await apiConfig.post("/dimensionar", requisicao);
+        const response = await apiConfig.post("/dimensionar/eletrodutos", requisicao);
         const responseData = response.data;
         setResposta(responseData);
 
@@ -49,11 +48,10 @@ export default function Dimensionamento({ route, navigation }) {
     conteudoPagina = <ActivityIndicator size="large" color="#D25719" />;
   } else if (resposta) {
     conteudoPagina = (
-      <ScrollView contentContainerStyle={estilos.scrollViewContent} // Adicione esta linha
-      style={estilos.scrollView}>
-        <CondutorSugerido resposta={resposta} requisicao={requisicao}/>
-        <DisjuntorSugerido resposta={resposta} requisicao={requisicao}/>
-        <EletrodutoSugerido resposta={resposta} requisicao={requisicao}/>
+      <ScrollView style={estilos.scrollView}
+        contentContainerStyle={estilos.scrollViewContent}
+      >
+        <EletrodutoSugerido resposta={resposta} requisicao={requisicao} origemCabeamento={false}/>
       </ScrollView>
     );
 

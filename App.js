@@ -1,6 +1,7 @@
 import React from 'react';
-import Rotas from './src/Rotas.js';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+
+import Rotas from './src/Rotas.js';
 
 export default function App() {
   return ( 

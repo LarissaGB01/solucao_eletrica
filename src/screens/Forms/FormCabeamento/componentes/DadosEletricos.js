@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { View, Text, TextInput } from "react-native";
-import textos from "../../../auxiliares/FormCabeamento/textos";
 import SegmentedControl from '@react-native-segmented-control/segmented-control';
-import estilos from "../../../auxiliares/FormCabeamento/estilos";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
+import textos from "../../../../auxiliares/Forms/textosCabeamento";
+import estilos from "../../../../auxiliares/Forms/estilos";
 
 export default function DadosEletricos({ dadosFormulario, atualizarValor }) {
     const [tipoPotencia, setTipoPotencia] = useState(textos.eletrico.potencia.medidas[0]);
 
-    return <View>
+    return <KeyboardAwareScrollView>
         <Text style={estilos.enunciado}>{textos.eletrico.pergunta}</Text>
         <SegmentedControl
             values={textos.eletrico.fases.map(fase => fase.display)}
@@ -50,7 +52,7 @@ export default function DadosEletricos({ dadosFormulario, atualizarValor }) {
                 <View style={estilos.espacoPreenchimento}>
                     <TextInput
                         defaultValue="0"
-                        maxLength={6}
+                        maxLength={8}
                         keyboardType="numeric"
                         style={estilos.entradaTexto}
                         onChangeText={(number) => {
@@ -70,7 +72,7 @@ export default function DadosEletricos({ dadosFormulario, atualizarValor }) {
                     <View style={estilos.espacoPreenchimento}>
                         <TextInput
                             defaultValue="0"
-                            maxLength={6}
+                            maxLength={8}
                             keyboardType="numeric"
                             style={estilos.entradaTexto}
                             onChangeText={(number) => {
@@ -98,5 +100,5 @@ export default function DadosEletricos({ dadosFormulario, atualizarValor }) {
                 </View>
             </View>
         )}
-    </View>
+    </KeyboardAwareScrollView>
 }

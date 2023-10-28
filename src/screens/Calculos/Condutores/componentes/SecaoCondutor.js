@@ -2,9 +2,10 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import Collapsible from "react-native-collapsible";
 import MathView from "react-native-math-view";
+import { AntDesign } from "@expo/vector-icons";
+
 import estilos from "../../../../auxiliares/Calculos/estilos";
 import textos from "../../../../auxiliares/Calculos/textos";
-import { AntDesign } from "@expo/vector-icons";
 
 export default function SecaoCondutor({ isAcordeonOpen, toggleAcordeon, responseData }) {
  
@@ -15,11 +16,19 @@ export default function SecaoCondutor({ isAcordeonOpen, toggleAcordeon, response
 
       <TouchableOpacity onPress={toggleAcordeon}>
         <View style={estilos.viewBotao}>
-          <Text style={estilos.textoDestaqueAcordeao}>
-            {textos.etapasCalculos[7]}
-            {dados.diametroCalculado.toFixed(2)}
-            {textos.unidadesMedida.secao}
-          </Text>
+          {dados.indicadorMinimoDiametroUtilizado ? (
+            <Text style={estilos.textoDestaqueAcordeao}>
+              {textos.etapasCalculos[7]}
+              {dados.minimoDiametroCabo.toFixed(2)}
+              {textos.unidadesMedida.secao}
+            </Text>
+          ) : (
+            <Text style={estilos.textoDestaqueAcordeao}>
+              {textos.etapasCalculos[7]}
+              {dados.diametroCalculado.toFixed(2)}
+              {textos.unidadesMedida.secao}
+            </Text>
+          )}
 
           {isAcordeonOpen ? (
             <AntDesign name="caretup" size={14} color="white" />

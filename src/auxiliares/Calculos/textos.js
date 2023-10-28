@@ -100,7 +100,7 @@ const textos = {
         },
         eletrodutoKanaflex: {
             dados: [
-                'Seção Nominal >= ',
+                'Seção Nominal Externa >= ',
             ],
             imagem: imagemEletrodutoKanaflex,
             fonte: 'Marca: Kanaflex'
@@ -112,6 +112,8 @@ const textos = {
         secaoMinima: 'Para um circuito de ',
         secaoMinimaComplemento: ' o mínimo aceito para a seção nominal do condutor é ',
         secaoMinimaConclusao: 'Logo, ',
+        disjuntorNaoEncontrado: "Desculpe, mas não encontrei disjuntor para os parâmetros fornecidos.",
+        eletrodutoNaoEncontrado: "Desculpe, mas não encontrei eletroduto para os parâmetros fornecidos.",
     },
     respostaFinal: {
         imagem: imagemCabeamento,
