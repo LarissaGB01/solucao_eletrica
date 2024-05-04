@@ -37,6 +37,8 @@ A lógica útilizada para a realização dos cálculos presentes nessa aplicaç�
 
 É importante mencionar que o dimensionamento de condutores é feito com base no cálculo da seção mínima do condutor. Todos os cálculos são baseados na norma NRB5410 e nas teorias sobre o assunto de dimensionamento publicadas até o dia 21/09/2023.
 
+Para maiores informações sobre as telas e navegação do aplicativo acesse [esse link](./docs/demonstrativoApp.md)
+
 ## Rodando o projeto
 
 O projeto foi construido utilizando expo e react native, logo para rodar o projeto utilize os seguintes comandos:
